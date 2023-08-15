@@ -98,10 +98,10 @@ Animator:
   m_GameObject: {fileID: 4396142810013910537}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0c5d19a0a65bc5044baf326e2d7e83a3, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9643551e7a49dda4b8352861a2dad444, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -122,6 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: 10
+  lives: 3
   playerTransform: {fileID: 0}
 --- !u!61 &613240800197771476
 BoxCollider2D:
