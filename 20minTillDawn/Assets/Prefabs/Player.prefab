@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 7964082828718992815}
   - component: {fileID: 2918950324993459053}
   - component: {fileID: 6123158715530409484}
-  - component: {fileID: 1135580941166170990}
   - component: {fileID: 613240800197771476}
   - component: {fileID: 4380844382853006253}
+  - component: {fileID: 3073285766850033654}
+  - component: {fileID: 1173480165365764861}
+  - component: {fileID: 3001371428095226412}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -109,21 +111,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1135580941166170990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4396142810013910537}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23dc5b234774d8b4b8afd1de30f6c815, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocity: 10
-  lives: 3
-  playerTransform: {fileID: 0}
 --- !u!61 &613240800197771476
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -196,3 +183,42 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &3073285766850033654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4396142810013910537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21584e62c335534f808822f36a63b4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1173480165365764861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4396142810013910537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e63b10744e7c3fb459180eea25ce3041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lives: 3
+  playerVelocity: 10
+  isMoving: 0
+--- !u!114 &3001371428095226412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4396142810013910537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71da84fde42d7024b90a22536916c06e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
