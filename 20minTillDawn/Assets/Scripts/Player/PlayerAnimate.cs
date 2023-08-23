@@ -4,13 +4,6 @@ using UnityEngine;
 
 public class PlayerAnimate : MonoBehaviour
 {
-    private Animator animator;
-
-
-    private void Awake()
-    {
-        animator = GetComponent<Animator>();
-    }
 
     void Update()
     {
@@ -18,28 +11,29 @@ public class PlayerAnimate : MonoBehaviour
     }
     private void AnimationHandler()
     {
-        bool isMovingAnimation = animator.GetBool("isMoving");
-        bool isHurtAnimation = animator.GetBool("isHurt");
+        bool isMovingAnimation = PlayerInfo.instance.animator.GetBool("isMoving");
+        bool isHurtAnimation = PlayerInfo.instance.animator.GetBool("isHurt");
         bool isMoving = PlayerInfo.instance.isMoving;
         bool isHurt = PlayerInfo.instance.CheckPlayerHurt();
 
         if (isMoving && isMovingAnimation == false)
         {
-            animator.SetBool("isMoving", true);
+            PlayerInfo.instance.animator.SetBool("isMoving", true);
         }
         else if (!isMoving && isMovingAnimation == true)
         {
-            animator.SetBool("isMoving", false);
+            PlayerInfo.instance.animator.SetBool("isMoving", false);
         }
 
         if (isHurt && isHurtAnimation == false)
         {
-            animator.SetBool("isHurt", true);
-            isHurt = false;
+            PlayerInfo.instance.animator.SetBool("isHurt", true);
+            PlayerInfo.instance.SetPlayerHurt(false);
         }
         else if (!isHurt && isHurtAnimation == true)
         {
-            animator.SetBool("isHurt", false);
+            PlayerInfo.instance.animator.SetBool("isHurt", false);
+
         }
     }
 }

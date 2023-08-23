@@ -11,8 +11,10 @@ public class PlayerInfo : MonoBehaviour
 
     private SpriteRenderer spritePlayer;
     private Transform playerTransform;
+    private SpriteRenderer spriteRenderer;
     private bool isHurt;
     public bool isMoving;
+    public Animator animator {get; set;}
 
     private void Awake()
     {
@@ -27,6 +29,8 @@ public class PlayerInfo : MonoBehaviour
         }
         #endregion
         playerTransform = GetComponent<Transform>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -38,7 +42,7 @@ public class PlayerInfo : MonoBehaviour
     {
         isHurt = true;
         lives--;
-        if (lives == 0)
+        if (lives <= 0)
         {
             Destroy(this.gameObject);
         }
@@ -64,4 +68,13 @@ public class PlayerInfo : MonoBehaviour
         return isHurt;
     }
 
+    public void SetPlayerHurt(bool hurt)
+    {
+         isHurt = hurt;
+    }
+
+    public SpriteRenderer GetSpriteRenderer()
+    {
+        return spriteRenderer;
+    }
 }
