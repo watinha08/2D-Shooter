@@ -102,6 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: 5
+  enemyLife: 1
 --- !u!95 &7310597791412977953
 Animator:
   serializedVersion: 5
@@ -162,7 +163,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8f366d83d6b68e47b44004f2a863454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyLife: 3
 --- !u!60 &6683272101703937740
 PolygonCollider2D:
   m_ObjectHideFlags: 0

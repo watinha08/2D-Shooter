@@ -33,7 +33,6 @@ public class PlayerAnimate : MonoBehaviour
         else if (!isHurt && isHurtAnimation == true)
         {
             PlayerInfo.instance.animator.SetBool("isHurt", false);
-
         }
     }
 }

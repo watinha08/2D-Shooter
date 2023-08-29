@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI lifesText;
     [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI XPInfoText;
+    [SerializeField] private TextMeshProUGUI currentLevelXPText;
 
     private void Awake()
     {
@@ -41,5 +43,15 @@ public class UIManager : MonoBehaviour
     public void SetLifesText(int updatedLife)
     {
         lifesText.text = "Lifes: " + updatedLife;
+    }
+
+    public void SetXPInfoText(int currentXP, int toLevelUpXP)
+    {
+        XPInfoText.text = currentXP + " / " + toLevelUpXP;
+    }
+
+    public void SetPlayerLevelText(int newLevel)
+    {
+        currentLevelXPText.text = "Level " + newLevel.ToString();
     }
 }

@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
 
     [SerializeField] private float velocity = 5;
-    [SerializeField] private int enemyLife = 3;
+    [SerializeField] private int enemyLife = 1;
     private int lives;
     private Transform enemyTransform;
 
@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
         if (collision.collider.tag == "Bullet")
         {
             enemyLife--;
-            GameManager.Instance.SetGameScore(1);
+            GameManager.instance.SetGameScore(1);
         }
         if (enemyLife <= 0)
         {

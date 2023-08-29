@@ -14,6 +14,11 @@ public class PlayerInfo : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private bool isHurt;
     public bool isMoving;
+
+    private int playerLevel;
+    private int currentPlayerXP;
+    private int toLevelUpXP = 10;
+
     public Animator animator {get; set;}
 
     private void Awake()
@@ -31,7 +36,11 @@ public class PlayerInfo : MonoBehaviour
         playerTransform = GetComponent<Transform>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
-        GameManager.Instance.SetPlayerLife(lifes);
+    }
+
+    private void Start()
+    {
+        GameManager.instance.SetPlayerLife(lifes);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -46,7 +55,7 @@ public class PlayerInfo : MonoBehaviour
     {
         isHurt = true;
         lifes--;
-        GameManager.Instance.SetPlayerLife(lifes);
+        GameManager.instance.SetPlayerLife(lifes);
         if (lifes <= 0)
         {
             Destroy(this.gameObject);
@@ -81,5 +90,27 @@ public class PlayerInfo : MonoBehaviour
     public SpriteRenderer GetSpriteRenderer()
     {
         return spriteRenderer;
+    }
+
+    public int GetPlayerLevel()
+    {
+        return playerLevel;
+    }
+
+    public void SetCurrentXP(int xpToAdd)
+    {
+        currentPlayerXP += xpToAdd;
+        CheckLevelUp();
+    }
+
+    private void CheckLevelUp()
+    {
+        if (currentPlayerXP >= toLevelUpXP)
+        {
+            playerLevel++;
+            currentPlayerXP -= toLevelUpXP;
+            toLevelUpXP += 5;
+        }
+        GameManager.instance.SetNewXPInfo(playerLevel, currentPlayerXP, toLevelUpXP);
     }
 }

@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 970ae5ad20dba3d45ba835ee8b064bf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletVelocity: 10
-  bulletLifeTime: 1
+  bulletVelocity: 20
+  bulletLifeTime: 2
 --- !u!212 &8937500351983730891
 SpriteRenderer:
   m_ObjectHideFlags: 0
