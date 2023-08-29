@@ -22,4 +22,10 @@ public class Bullet : MonoBehaviour
         yield return new WaitForSeconds(bulletLifeTime);
         Destroy(gameObject);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
+    }
+
 }
