@@ -47,19 +47,26 @@ public class PlayerInfo : MonoBehaviour
     {
         if (collision.collider.tag == "Enemy")
         {
-            LifeHandler();
+            LifeHandler(-1);
         }
     }
 
-    private void LifeHandler()
+    public void LifeHandler(int value)
     {
-        isHurt = true;
-        lifes--;
-        GameManager.instance.SetPlayerLife(lifes);
-        if (lifes <= 0)
+        if(value > 0)
         {
-            Destroy(this.gameObject);
+            lifes += value;
         }
+        else
+        {
+            isHurt = true;
+            lifes += value;
+            if (lifes <= 0)
+            {
+                Destroy(this.gameObject);
+            }
+        }
+        GameManager.instance.SetPlayerLife(lifes);
     }
 
     public Vector2 GetPlayerPosition()
@@ -110,7 +117,8 @@ public class PlayerInfo : MonoBehaviour
             playerLevel++;
             currentPlayerXP -= toLevelUpXP;
             toLevelUpXP += 5;
+            GameManager.instance.OnLevelUp();
         }
-        GameManager.instance.SetNewXPInfo(playerLevel, currentPlayerXP, toLevelUpXP);
+        GameManager.instance.SetLevelInfo(playerLevel, currentPlayerXP, toLevelUpXP);
     }
 }
